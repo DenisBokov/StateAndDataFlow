@@ -18,7 +18,7 @@ struct RegisterView: View {
                     .frame(width: 150)
                     .multilineTextAlignment(.center)
                 Text("\(name.count)")
-                    .foregroundColor(name.count >= 3 ? Color(.systemGreen) : Color(.black))
+                    .foregroundColor(color())
             }
             Button(action: registerUser) {
                 HStack {
@@ -32,6 +32,10 @@ struct RegisterView: View {
     private func registerUser() {
         user.name = name
         user.isRegister.toggle()
+    }
+    
+    private func color() -> Color {
+        name.count >= 3 ? Color(.systemGreen) : Color(.black)
     }
 }
 
