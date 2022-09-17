@@ -2,7 +2,7 @@
 //  TimeCounter.swift
 //  StateAndDataFlow
 //
-//  Created by Alexey Efimov on 14.09.2022.
+//  Created by Denis Bokov on 14.09.2022.
 //
 
 import Combine
@@ -17,7 +17,7 @@ class TimeCounter: ObservableObject {
     func startTimer() {
         if counter > 0 {
             timer = Timer.scheduledTimer(
-                timeInterval: 1,
+                timeInterval: 1, 
                 target: self,
                 selector: #selector(updateCounter),
                 userInfo: nil,
