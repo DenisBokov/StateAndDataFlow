@@ -24,6 +24,10 @@ struct ContentView: View {
             ButtonView(timer: timer)
             
             Spacer()
+            
+            ButtonCloseView()
+            
+            Spacer()
         }
     }
 }
@@ -47,6 +51,22 @@ struct ButtonView: View {
         }
         .frame(width: 200, height: 60)
         .background(.red)
+        .cornerRadius(20)
+        .overlay(RoundedRectangle(cornerRadius: 20).stroke(.black, lineWidth: 4))
+    }
+}
+
+struct ButtonCloseView: View {
+//    @ObservedObject var user: UserManager
+    var body: some View {
+        Button(action: {}) {
+            Text("Log out")
+                .font(.title)
+                .fontWeight(.bold)
+                .foregroundColor(.white)
+        }
+        .frame(width: 200, height: 60)
+        .background(.blue)
         .cornerRadius(20)
         .overlay(RoundedRectangle(cornerRadius: 20).stroke(.black, lineWidth: 4))
     }
